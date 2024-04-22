@@ -1,0 +1,100 @@
+/* File: styles/Home.module.css */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap');
+
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../Assets/Background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.homecontainer{
+  display:grid;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../Assets/Background.png');
+  background-size: cover;
+  background-position: center;
+  row-gap: 1em;
+}
+
+.hometext{
+  font-family: "Almendra SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+  align-items: center;
+}
+
+.main {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.homeBtn {
+  padding: 1rem 2rem;
+  background-color: #9403fc;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1em;
+}
+
+.getStartedBtn {
+  padding: 1rem 2rem;
+  background-color: #9403fc;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.getStartedBtn:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .getStartedBtn {
+    font-size: 1.2rem;
+  }
+}
