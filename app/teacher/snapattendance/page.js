@@ -1,9 +1,11 @@
-"use client"; 
+"use client";
 import Head from "next/head";
-import "../../styles.module.css";
 import { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import styles from "../../styles.module.css"
+import Link from "next/link";
+import snapimage from '../../../Assets/Snap Page.png';
 
 const ReactApp = () => {
   const [image, setImage] = useState(null);
@@ -61,12 +63,10 @@ const ReactApp = () => {
 
       setAnnotatedImage(null);
       try {
-        const response = await axios.post(`${uri}/take_attendance`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
-        setAnnotatedImage(`data:image/jpeg;base64,${response.data.image}`);
+        const response = await axios.get("https://h30rztz2q8.execute-api.ap-south-1.amazonaws.com/dev/user/?objectKey=eblock.jpeg");
+        const data = await response.json();
+        console.log(data);
+        // setAnnotatedImage(`data:image/jpeg;base64,${response.data.image}`);
       } catch (error) {
         console.error("Error processing image:", error);
       }
@@ -84,58 +84,102 @@ const ReactApp = () => {
     return btoa(binary);
   };
   return (
-    <>
-      <Head>
+    <div className={styles.homecontainer}>
+      <>
+        {/* <Head>
         <title>next-pwa example</title>
-      </Head>
-      <h1 className="text-3xl font-bold underline">Snap Attendance</h1>
-      <div className="flex flex-col items-center">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-2"
-          onClick={selectImage}
-        >
-          Select Image
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2"
-          onClick={processImage}
-        >
-          Process Image
-        </button>
-        <input
-          className="border border-gray-400 rounded p-2 mb-4"
-          type="text"
-          placeholder="Upscaling Factor"
-          value={upscaling}
-          onChange={(e) => setUpScaling(e.target.value)}
-        />
-        <input
-          className="border border-gray-400 rounded p-2 mb-4"
-          type="text"
-          placeholder="Threshold Factor"
-          value={threshold}
-          onChange={(e) => setThreshold(e.target.value)}
-        />
-        {image && (
-          <Image
-            src={image}
-            alt="Selected Image"
-            width={300}
-            height={300}
-            className="my-4"
-          />
-        )}
-        {annotatedImage && (
-          <Image
-            src={annotatedImage}
-            alt="Annotated Image"
-            width={300}
-            height={300}
-            className="my-4"
-          />
-        )}
+      </Head> */}
+        <h1 className={styles.hometext}>Snap Attendance</h1>
+
+        <div>
+          <h1 className={styles.caveatsanp}>Attendance through the lens..! </h1>
+        </div>
+
+
+        <div>
+          <h1 className={styles.caveat2}>"Faces become signatures, photos mark the present." </h1>
+        </div>
+
+        <div >
+
+          <div className={styles.teabtpos}>
+            <button
+              className={styles.dayBtn}
+              onClick={selectImage}
+            >
+              Select Image
+            </button>
+          </div>
+
+          <div className={styles.teabtpos}>
+
+            <button
+              className={styles.dayBtn}
+              onClick={processImage}
+            >
+              Process Image
+            </button>
+
+          </div>
+
+          <div className={styles.teabtpos}>
+
+            <input
+              className="border border-gray-400 rounded p-2 mb-4"
+
+              type="text"
+              placeholder="Upscaling Factor"
+              value={upscaling}
+              onChange={(e) => setUpScaling(e.target.value)}
+            />
+
+          </div>
+
+          <div className={styles.teabtpos}>
+            <input
+              className="border border-gray-400 rounded p-2 mb-4"
+              type="text"
+              placeholder="Threshold Factor"
+              value={threshold}
+              onChange={(e) => setThreshold(e.target.value)}
+            />
+          </div>
+
+
+
+          {image && (
+            <Image
+              src={image}
+              alt="Selected Image"
+              width={300}
+              height={300}
+              className="my-4"
+            />
+          )}
+          {annotatedImage && (
+            <Image
+              src={annotatedImage}
+              alt="Annotated Image"
+              width={300}
+              height={300}
+              className="my-4"
+            />
+          )}
+        </div>
+      </>
+
+      <div className={styles.teabtpos}>
+        <Link href="/teacher" className={styles.backbtn}>
+          Back
+        </Link>
       </div>
-    </>
+
+      <div>
+
+        <Image src={snapimage} width={1024} alt="Snappageimage" className={styles.snapimgpos} />
+
+      </div>
+    </div>
   );
 };
 export default ReactApp;

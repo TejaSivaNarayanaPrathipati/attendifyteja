@@ -5,41 +5,64 @@ const timetable = () => {
   return (
     <div className={styles.homecontainer}>
       <h1 className={styles.hometext}>Choose your day!</h1>
-      {/* Add content specific to the teacher page */}
-      <Link href="/student/timetable/monday" className={styles.homeBtn}>
-        Monday
-      </Link>
 
-      <Link href="/student/timetable/tuesday" className={styles.homeBtn}>
-        Tuesday
-      </Link>
+      <div>
+        <h1 className={styles.caveat}>"Timetables are the architects of discipline and organization and it is a blueprint for productivity." </h1>
+      </div>
 
-      <Link href="/student/timetable/wednesday" className={styles.homeBtn}>
-        Wednesday
-      </Link>
+      <div className={styles.teabtpos}>
+        <Link href="/student/timetable/monday" className={styles.dayBtn}>
+          Monday
+        </Link>
+      </div>
+
+      <div className={styles.teabtpos}>
+
+        <Link href="/student/timetable/tuesday" className={styles.dayBtn}>
+          Tuesday
+        </Link>
+      </div>
+
+      <div className={styles.teabtpos}>
+        <Link href="/student/timetable/wednesday" className={styles.dayBtn}>
+          Wednesday
+        </Link>
+      </div>
 
 
-      <Link href="/student/timetable/thursday" className={styles.homeBtn}>
-        Thursday
-      </Link>
+      <div className={styles.teabtpos}>
+
+        <Link href="/student/timetable/thursday" className={styles.dayBtn}>
+          Thursday
+        </Link>
+      </div>
 
 
-      <Link href="/student/timetable/friday" className={styles.homeBtn}>
-        Friday
-      </Link>
+      <div className={styles.teabtpos}>
+        <Link href="/student/timetable/friday" className={styles.dayBtn}>
+          Friday
+        </Link>
+      </div>
 
+      <div className={styles.teabtpos}>
+        <Link href="/student/timetable/saturday" className={styles.dayBtn}>
+          Saturday
+        </Link>
+      </div>
 
-      <Link href="/student/timetable/saturday" className={styles.homeBtn}>
-        Saturday
-      </Link>
+      <div className={styles.teabtpos}>
 
-      <Link href="/student/timetable/update" className={styles.homeBtn}>
-        Update Time Table
-      </Link>
-      
-      <Link href="/student" className={styles.homeBtn}>
-        Go back to Student
-      </Link>
+        <Link href="/student/timetable/update" className={styles.dayBtn}>
+          Update Time Table
+        </Link>
+      </div>
+
+      <div className={styles.teabtpos}>
+        <Link href="/student" className={styles.backbtn}>
+          Back
+        </Link>
+      </div>
+
     </div>
   );
 };

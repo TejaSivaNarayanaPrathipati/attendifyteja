@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function OnboardingButton() {
   return (
     <div>
-      <Image src={BoardingPagetextImage} width={500} alt="Boardingpageimage"
+      <Image src={BoardingPagetextImage} width={800} alt="Boardingpageimage" className={styles.boardingpageimg}
       />
       <Link href="/home">
         <button className={styles.getStartedBtn}>

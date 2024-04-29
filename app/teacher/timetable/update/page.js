@@ -6,9 +6,11 @@ const basic = () => {
     <div className={styles.homecontainer}>
       <h1 className={styles.hometext}> Update Function</h1>
 
-      <Link href="/teacher/timetable" className={styles.homeBtn}>
-        Go back to TimeTable
-      </Link>
+      <div className={styles.teabtpos}>
+        <Link href="/teacher/timetable" className={styles.backbtn}>
+          Back
+        </Link>
+      </div>
     </div>
   );
 };

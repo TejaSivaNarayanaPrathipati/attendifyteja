@@ -4,11 +4,14 @@ import styles from '../../../styles.module.css';
 const basic = () => {
   return (
     <div className={styles.homecontainer}>
-      <h1 className={styles.hometext}> Update Function</h1>
+      <h1 className={styles.hometext}>Update Function</h1>
 
-      <Link href="/student/timetable" className={styles.homeBtn}>
-        Go back to TimeTable
-      </Link>
+      <div className={styles.teabtpos}>
+        <Link href="/student/timetable" className={styles.backbtn}>
+          Back
+        </Link>
+      </div>
+
     </div>
   );
 };
